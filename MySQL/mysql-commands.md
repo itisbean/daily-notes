@@ -6,13 +6,20 @@
 mysql --help|grep my.cnf
 ```
 
+## 备份
+
+```MySQL
+mysqldump -h localhost -P 3306 -u root -p databasename > bak.sql;
+password
+```
+
 ## 远程连接
 
 ### tcp
 
 ```MySQL
-mysql -h 120.24.101.110 -u public_yk -p -P 4040
-gh7gh5esazds63
+mysql -h 127.0.0.1 -u root -p -P 3306
+password
 ```
 
 ### socket
