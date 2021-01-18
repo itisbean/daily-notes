@@ -39,6 +39,20 @@ git branch -m master
 git push -f origin master
 ```
 
+## 撤销commit
+
+保留工作区改动文件
+
+```git
+<!-- @hash: git log 提交记录hash值 -->
+git reset --soft @hash
+```
+或
+```git
+<!-- ~2 恢复到2次前的提交 -->
+git reset --soft HEAD~2
+```
+
 ## 常见错误
 
 1. 报错信息： <span style="color:red">index file smaller than expected</span>
