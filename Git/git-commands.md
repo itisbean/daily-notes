@@ -6,7 +6,7 @@
 
 ## 创建本地仓库并关联远程
 
-```
+```git
 git init
 git add .
 git commit -m "init"
@@ -16,14 +16,16 @@ git push -u origin master
 
 ## 强制pull
 
-```
+```git
 git fetch --all
 git reset --hard origin/master
 git pull
 ```
 
 ## 删除提交记录
-某次提交不小心泄露了一些关键信息，一开始仓库设置`private`，转为`public`后想删掉那次提交记录，然而目前没有找到删除某次提交的办法，只能 删除分支再重建 
+
+某次提交不小心泄露了一些关键信息，一开始仓库设置`private`，转为`public`后想删掉那次提交记录，然而目前没有找到删除某次提交的办法，只能 删除分支再重建
+
 ```git
 # 1. 创建一个新的本地分支
 git checkout --orphan latest_branch
@@ -39,6 +41,13 @@ git branch -m master
 git push -f origin master
 ```
 
+## 强制同步远端分支，丢弃本地所有变更
+
+```git
+git reset --hard origin/hexo
+git clean -df
+```
+
 ## 撤销commit
 
 保留工作区改动文件
@@ -47,7 +56,9 @@ git push -f origin master
 <!-- @hash: git log 提交记录hash值 -->
 git reset --soft @hash
 ```
+
 或
+
 ```git
 <!-- ~2 恢复到2次前的提交 -->
 git reset --soft HEAD~2

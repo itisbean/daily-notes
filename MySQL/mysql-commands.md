@@ -10,7 +10,12 @@ mysql --help|grep my.cnf
 
 ```MySQL
 mysqldump -h localhost -P 3306 -u root -p databasename > bak.sql;
-password
+```
+
+## 还原
+
+```MySQL
+mysql -u root -p databasename < bak.sql;
 ```
 
 ## 远程连接
